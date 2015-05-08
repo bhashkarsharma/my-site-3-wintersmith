@@ -1,0 +1,42 @@
+{
+  "locals": {
+    "url": "http://bhashkar.me",
+    "name": "Bhashkar Sharma",
+    "owner": "Bhashkar Sharma",
+    "description": "Dreamer. Tinkerer.",
+    "feedPath": "/feed.xml",
+    "analytics_id" : "UA-2340837-4"
+  },
+  "port" : "8000",
+  "plugins": [
+    "./plugins/paginator.coffee",
+    "./plugins/home.coffee",
+    "./plugins/blog.coffee"
+  ],
+  "shared": {
+    "articles": "articles"
+  },
+  "require": {
+    "moment": "moment",
+    "_": "underscore",
+    "typogr": "typogr"
+  },
+  "jade": {
+    "pretty": true
+  },
+  "markdown": {
+    "smartLists": true,
+    "smartypants": true
+  },
+  "blog": {
+    "postsDir": "articles",
+    "template": "article.jade",
+    "filenameTemplate": "/:year/:month/:day/:title/index.html"
+  },
+  "paginator": {
+    "perPage": 3
+  },
+  "ignore": [
+    "**/.DS_Store"
+  ]
+}

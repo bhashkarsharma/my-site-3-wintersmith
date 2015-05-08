@@ -1,0 +1,16 @@
+.content {
+    text-align: center;
+}
+#post section {
+    text-align: center;
+}
+
+#post .box.style3 {
+    text-align: center;
+}
+
+.kineticjs-content {
+    border: 1px solid;
+    display: inline-block;
+    background: white;
+}

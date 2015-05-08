@@ -1,0 +1,64 @@
+#chats {
+    max-height: 350px;
+    overflow: scroll;
+    margin: 1em 0;
+}
+
+.bubble {
+    padding: 4px 15px;
+    margin: 5px 0;
+    border-radius: 22px;
+    font-size: 0.75em;
+    clear: both;
+}
+
+.send {
+    float: right;
+    background: #dce3e2;
+}
+
+.receive {
+    float: left;
+    background: white;
+}
+
+input[type="text"] {
+    width: 100%;
+    font-size: 1em;
+}
+
+input[type="submit"] {
+    display: none;
+}
+
+label {
+    font-size: 0.7em;
+}
+
+#send {
+    padding: 0.1em 1em;
+}
+
+.offline {
+    background-color: #FF9999;
+}
+
+.highlight {
+    background-color: lightyellow;
+}
+
+#clearChats {
+    display: none;
+    font-size: 0.5em;
+}
+
+#video {
+    display: none;
+}
+
+.incompatible {
+    border: 1px solid grey;
+    padding: 5px 10px;
+    background: #ffaaaa;
+    text-align: center;
+}

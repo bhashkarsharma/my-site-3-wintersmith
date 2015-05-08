@@ -1,0 +1,34 @@
+extends layout
+
+block append vars
+  - bodyclass = 'article-detail'
+
+block prepend title
+  | #{ page.title + " - "}
+
+block header
+  div.logo
+    a(href=locals.url)
+  h1.title
+    a(href=locals.url)= locals.name
+  p.description= locals.description
+
+  include author
+  h1= page.title
+  if page.metadata.author
+    p.author
+      | #{ "Written by " }
+      mixin author(page.metadata.author)
+  p.date
+    span= moment.utc(page.date).format('DD. MMMM YYYY')
+
+block content
+  article.article
+    section.content!= typogr(page.html).typogrify()
+
+  if page.metadata.comments
+    include disqus
+
+block prepend footer
+  div.nav
+    a(href=contents.index.url) « Back to home
