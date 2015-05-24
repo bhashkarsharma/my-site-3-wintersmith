@@ -28,13 +28,16 @@
     "smartLists": true,
     "smartypants": true
   },
+  "paginator": {
+    "perPage": 10,
+    "template": "blog.jade",
+    "first": "blog/index.html",
+    "filename": "blog/page/%d/index.html"
+  },
   "blog": {
     "postsDir": "articles",
     "template": "article.jade",
     "filenameTemplate": "/:year/:month/:day/:title/index.html"
-  },
-  "paginator": {
-    "perPage": 3
   },
   "ignore": [
     "**/.DS_Store"
