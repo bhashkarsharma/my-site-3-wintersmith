@@ -1,0 +1,50 @@
+.content {
+    text-align: center;
+}
+
+#post section {
+    font-family: Helvetica;
+    text-align: center;
+} 
+
+#glow { 
+    line-height: 1.2;
+    font-family: Helvetica, Arial, sans-serif;
+} 
+
+#glow .on {
+    color: #333;
+} 
+
+#glow .off { 
+    color: #ddd; 
+} 
+
+#glow .on, #glow .off { 
+    display: inline-block; 
+    text-align: center; 
+} 
+
+@media (max-width: 480px) { 
+    #glow .on, #glow .off { 
+        font-size: 16px;
+        width: 22px; 
+        height: 22px;
+    }
+} 
+
+@media (min-width: 481px) and (max-width: 960px) { 
+    #glow .on, #glow .off { 
+        font-size: 20px;
+        width: 30px; 
+        height: 30px; 
+    } 
+} 
+
+@media (min-width: 961px) { 
+    #glow .on, #glow .off { 
+        font-size: 30px;
+        width: 40px; 
+        height: 40px; 
+    } 
+}

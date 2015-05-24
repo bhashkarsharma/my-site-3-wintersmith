@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+    <title>Sync your Nokia contacts with GMail contacts - Bhashkar Sharma
+    </title>
+    <link rel="canonical" href="http://rockerhome.wordpress.com/2011/01/31/sync-your-nokia-contacts-with-gmail/">
+    <link rel="alternate" href="http://bhashkar.me/feed.xml" type="application/rss+xml" title="Dreamer. Tinkerer.">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/jquery.min.js"></script>
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <div class="logo"><a href="http://bhashkar.me"></a></div>
+        <h1 class="title"><a href="http://bhashkar.me">Bhashkar Sharma</a></h1>
+        <p class="description">Dreamer. Tinkerer.</p>
+        <h1>Sync your Nokia contacts with GMail contacts</h1>
+        <p class="date"><span>31. January 2011</span></p>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><p><img src="http://rockerhome.files.wordpress.com/2011/01/gmail-app-mobile.jpg?w=300" alt="Nokia GMail sync"></p>
+<p>Hi fellas. So I have this Nokia S60 phone (5233) which, sadly, does not have support for Mail for Exchange ActiveSync. And that is the reason I started looking for alternatives to backup and sync my contacts and calendar.<span class="more"></span> An option that can serve the backup purpose is <a href="http://ovi.com/">Nokia Ovi</a> but that is limited to a backup and restore functionality and does not support any syncing with other services <span class="caps">AFAIK</span>, which didn’t help my purpose. So I started searching for other alternatives. Now, I don’t know whether any paid solutions work (assuming they exist) but yours truly was not looking for those. After running some queries on Google, I landed on some interesting solutions. And the one that worked for me, I’m sharing&nbsp;here: </p>
+<ol>
+<li>Go to Settings » Connectivity » Data transfer »&nbsp;Sync</li>
+<li>Select ‘Options’ » ‘New sync&nbsp;profile’</li>
+<li>A profile wizard will start, and would ask for a profile name. Just give a unique name such as ‘GMail sync’ and hit&nbsp;‘Next’</li>
+<li>Now it would prompt you for a server version. Choose&nbsp;‘1.2’</li>
+<li>Next, choose what you want to sync. In our case, it will just be&nbsp;‘Contacts’.</li>
+<li>Now, the name of the Contacts database. Enter exactly ‘Contacts’ (without the&nbsp;quotes)</li>
+<li>For Data bearer, choose&nbsp;‘Internet’</li>
+<li>Host address next. Enter the <span class="caps">URL</span> ‘<a href="https://m.google.com/syncml">https://m.google.com/syncml</a>‘</li>
+<li>Server <span class="caps">ID</span> will be&nbsp;‘Google’ </li>
+<li>Port, if it prompts you for, would be&nbsp;‘443’ </li>
+<li>Now for the login credentials: Username and Password. Just enter your Google account username and&nbsp;password.</li>
+<li>Okay, we are good to go. Now choose ‘Save profile’. It will prompt you for whether this should be the active&nbsp;profile. </li>
+</ol>
+<p>Choose ‘Yes’. Now all you need to do is go to ‘Options’ »&nbsp;‘Synchronize’. </p>
+<p>Once synchronization is complete, all your GMail contacts will be in sync with your phone contacts and vice-versa. Oh, and did I mention that includes the pics that people have set as their Google profile pic? Cool,&nbsp;huh? </p>
+<p>Also, you can get push mail for your phone using Nokia Mail service, for which you might need to update your phone software. I updated my phone recently and is currently running V 21.1.102 dated 17-09-2010. Works beautifully for&nbsp;me. </p>
+<p>The default Email app has inbuilt templates for GMail, Yahoo! mail, Hotmail, Rediffmail etc. And an option ‘others’, although I think very few would need to go there. I’m hoping it helps!&nbsp;:) </p>
+<p>Take care. I will be back. Till&nbsp;then…</p>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="/">« Back to home</a></div>
+        <section class="about"><p>I love the web and open-source; and enjoy building useful things.
+I have had the opportunity to give talks on JS-related things we built at <a href="http://mobstac.com">MobStac</a>.</p>
+<p>I love books; and sometimes try to write. I enjoy sharing my learnings on <a href="http://quora.com/Bhashkar-Sharma">Quora</a>, among other places.</p>
+<p>The excitement of learning new things is the reason I get out of bed in the morning.</p>
+
+        </section>
+        <section class="links"><a href="https://twitter.com/bhashkarsharma" class="icon fa-twitter"></a><a href="https://linkedin.com/in/bhashkarsharma" class="icon fa-linkedin"></a><a href="https://github.com/bhashkarsharma" class="icon fa-github"></a><a href="mailto:info@bhashkar.me" class="icon fa-envelope"></a></section>
+        <section class="copy">
+          <p>&copy; 2015 Bhashkar Sharma &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a></p>
+        </section>
+      </div>
+    </footer>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-2340837-4', 'bhashkar.me');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

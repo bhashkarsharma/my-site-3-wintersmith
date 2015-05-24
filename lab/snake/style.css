@@ -1,0 +1,16 @@
+.content {
+    text-align: center;
+}
+
+#post section {
+    text-align: center;
+} 
+
+#page .box.style3 {
+    text-align: center;
+} 
+
+#game {
+    border: 10px solid;
+    border-radius: 10px;
+}

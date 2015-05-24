@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+    <title>Bhashkar Sharma
+    </title>
+    <link rel="alternate" href="http://bhashkar.me/feed.xml" type="application/rss+xml" title="Dreamer. Tinkerer.">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/jquery.min.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="content-wrap">
+        <div class="logo"><a href="http://bhashkar.me"></a></div>
+        <h1><a href="http://bhashkar.me">Bhashkar Sharma</a></h1>
+        <p class="description">Dreamer. Tinkerer.</p>
+        <div class="nav"><a href="/">Home</a><a href="/lab/">Lab</a><a href="/reading/">Reading</a>
+          <!--a(href='/media/') Media-->
+          
+        </div>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article intro">
+          <header>
+            <p class="date"><span>04. September 2012</span></p>
+            <h2><a href="/2012/09/04/quarter-of-a-century-as-an-earthling/">Quarter of a Century as an Earthling</a></h2>
+          </header>
+          <section class="content"><p>Having completed 25 years on this planet, I suddenly feel old :P and no longer a teenager (looks like it took me a while to get out of that&nbsp;one).
+            <p class="more"><a href="/2012/09/04/quarter-of-a-century-as-an-earthling/">more</a></p>
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>24. August 2012</span></p>
+            <h2><a href="/2012/08/25/i-m-offended/">I'm offended!</a></h2>
+          </header>
+          <section class="content"><p>Taking offense is our national sport and pastime. Like weddings. And cricket. [As a side note, thanks to <a href="http://en.wikipedia.org/wiki/India_at_the_2012_Summer_Olympics">Sushil, Yogeshwar, Saina and Mary Kom</a> for reminding us that there are other sports in the World]. Someone should suggest adding the event of ‘taking offense’ to the Olympic games. It could entail 7 people sitting around a table trying to prove everyone else an ostrich with their head stuck in cemented ground. I’m sure we have a prize reserved in that. Unless <a href="http://www.care2.com/causes/somali-comedian-shot-dead-after-making-islamist-jokes.html">someone</a> beats us to&nbsp;it.
+            <p class="more"><a href="/2012/08/25/i-m-offended/">more</a></p>
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>29. July 2012</span></p>
+            <h2><a href="/2012/07/29/fuck-yeah/">Fuck Yeah!</a></h2>
+          </header>
+          <section class="content"><p>Forbes is <a href="http://www.forbes.com/sites/briancaulfield/2012/07/27/aol-unit-techcrunch-q2-adjusted-f-bomb-production-down-45/">counting</a> the number of fucks TechCrunch gives; and <span class="caps">TC</span> <a href="http://techcrunch.com/2012/07/27/fornicating-under-consent-of-the-king/">hits back</a>.
+            <p class="more"><a href="/2012/07/29/fuck-yeah/">more</a></p>
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>12. July 2012</span></p>
+            <h2><a href="/2012/07/12/css-margin-in-percentage/">CSS Margin In Percentage</a></h2>
+          </header>
+          <section class="content"><p>Okay, this is funny; but only if it doesn’t come in the way of you getting things done on time. I was trying to assign percentage margin to a &lt;div&gt; and it kept throwing me off on the calculations. A bit of googling led me to this <a href="http://www.mattsnider.com/css-using-percent-for-margin-and-padding/">explanation</a>. If you are giving padding/margin in percentage, due to some out-of-the-world reason it would calculate on the basis of the <em>width</em> of the parent element; whether you are calculating left-right values for margin/padding, or the top-bottom ones. It beats me as to why is it this way. Let me know if you know the answer. Back to&nbsp;work!</p>
+
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>01. July 2012</span></p>
+            <h2><a href="/2012/07/01/just-for-fun/">Just For Fun</a></h2>
+          </header>
+          <section class="content"><p>Just the other&nbsp;day… </p>
+<pre><code class="lang-python"><span class="keyword">import</span> re, os
+avi_re = <span class="string">'(Friends)(\\.)(S)(01)(E)(?P&amp;lt;epi&amp;gt;.*?)(\\.)(DVDRip)(\\.)(XviD)(\\.)(avi)'</span>
+sub_re = <span class="string">'(Friends)( )(-)( )(1)(\\.)(?P&amp;lt;epi&amp;gt;\w+)(?P&amp;lt;name&amp;gt;.*?)(\\(<span class="caps">EN</span>\\))(\\.)(sub)'</span>
+
+<span class="keyword">for</span> avi_f <span class="keyword">in</span> filelist:
+  <span class="keyword">if</span> re.match(avi_re, avi_f):
+    e = re.match(avi_re, avi_f).group(<span class="string">'epi'</span>)
+    <span class="keyword">for</span> sub_f <span class="keyword">in</span> filelist:
+      <span class="keyword">if</span> re.match(sub_re, sub_f):
+        ep = re.match(sub_re, sub_f).group(<span class="string">'epi'</span>)
+        <span class="keyword">if</span> e == ep:
+          new = <span class="string">'Friends - 1.'</span> + ep + re.match(sub_re, sub_f).group(<span class="string">'name'</span>)
+          os.rename(avi_f, new + <span class="string">'.avi'</span>)
+          os.rename(sub_f, new + <span class="string">'.sub'</span>)
+</code></pre>
+<p>because I can!&nbsp;;)</p>
+
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>24. June 2012</span></p>
+            <h2><a href="/2012/06/24/setting-up-my-own-server-finally/">Setting up my own server, finally!</a></h2>
+          </header>
+          <section class="content"><p>I had bought the domain <a href="http://bhashkar.me">bhashkar.me</a> a year back, but didn’t really use it for something worthwhile. It hit me when time came to renew the lease on that thing that it was something I could have made good use of, and I decided&nbsp;to.
+            <p class="more"><a href="/2012/06/24/setting-up-my-own-server-finally/">more</a></p>
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>03. June 2012</span></p>
+            <h2><a href="/2012/06/03/advertising/">Advertising</a></h2>
+          </header>
+          <section class="content"><p>Advertising is one of primary sources of revenue for many companies, and of primary expenditure for many&nbsp;others.</p>
+<p>In order to validate the humongous expenditure on adverts and to optimize the RoI, a lot of researches are conducted to create the right messaging and feeling around the product and the brand to improve the targeting and enhance the effect advertisements have on the&nbsp;audience.
+            <p class="more"><a href="/2012/06/03/advertising/">more</a></p>
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>03. June 2012</span></p>
+            <h2><a href="/2012/06/03/the-killer-app/">The Killer App</a></h2>
+          </header>
+          <section class="content"><p>Every once in a while, I used to come across this phrase (although the frequency has now diminished and gave way to <em>enter-successful-product</em>-killer in recent times). Since 2007 there have been at least 20 so-called iPhone killers, and every few days we get to see a new self-proclaimed Facebook/Instagram/Google&nbsp;killer.
+            <p class="more"><a href="/2012/06/03/the-killer-app/">more</a></p>
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>28. May 2012</span></p>
+            <h2><a href="/2012/05/28/turning-of-the-tables/">Turning of the tables</a></h2>
+          </header>
+          <section class="content"><p>I landed on this <a href="http://john.jubjubs.net/2007/06/14/a-pictures-worth-100m-users/">article</a> and it sounded pretty amusing to me. Why? Because when it was written, Apple was planning its dominance on the Web, as it seems. But here’s the point: <a href="http://google.com/chrome">something inexistent</a> 4 years ago has the largest market share in the World today. It would not have been possible if it wasn’t for open standards and continuous push towards creating something better and, of course,&nbsp;Google.
+            <p class="more"><a href="/2012/05/28/turning-of-the-tables/">more</a></p>
+          </section>
+        </article>
+        <article class="article intro">
+          <header>
+            <p class="date"><span>06. May 2012</span></p>
+            <h2><a href="/2012/05/06/heartbreaks/">Heartbreaks</a></h2>
+          </header>
+          <section class="content"><p><em>[Disclaimer: Those who came looking for a teenage girl’s drama can go jump off their roofs&nbsp;now]</em></p>
+<blockquote>
+<p>The heart was made to be broken. - Oscar&nbsp;Wilde
+            <p class="more"><a href="/2012/05/06/heartbreaks/">more</a></p>
+          </section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="/blog/page/4/">« Newer</a><a href="/blog/page/6/">Older »</a>
+        </div>
+        <section class="about"><p>I love the web and open-source; and enjoy building useful things.
+I have had the opportunity to give talks on JS-related things we built at <a href="http://mobstac.com">MobStac</a>.</p>
+<p>I love books; and sometimes try to write. I enjoy sharing my learnings on <a href="http://quora.com/Bhashkar-Sharma">Quora</a>, among other places.</p>
+<p>The excitement of learning new things is the reason I get out of bed in the morning.</p>
+
+        </section>
+        <section class="links"><a href="https://twitter.com/bhashkarsharma" class="icon fa-twitter"></a><a href="https://linkedin.com/in/bhashkarsharma" class="icon fa-linkedin"></a><a href="https://github.com/bhashkarsharma" class="icon fa-github"></a><a href="mailto:info@bhashkar.me" class="icon fa-envelope"></a></section>
+        <section class="copy">
+          <p>&copy; 2015 Bhashkar Sharma &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a></p>
+        </section>
+      </div>
+    </footer>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-2340837-4', 'bhashkar.me');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

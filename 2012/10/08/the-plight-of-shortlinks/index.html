@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+    <title>The plight of shortlinks - Bhashkar Sharma
+    </title>
+    <link rel="canonical" href="http://rockerhome.wordpress.com/2012/10/08/the-internets-are-broken-again/">
+    <link rel="alternate" href="http://bhashkar.me/feed.xml" type="application/rss+xml" title="Dreamer. Tinkerer.">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/jquery.min.js"></script>
+  </head>
+  <body class="article-detail">
+    <header class="header">
+      <div class="content-wrap">
+        <div class="logo"><a href="http://bhashkar.me"></a></div>
+        <h1 class="title"><a href="http://bhashkar.me">Bhashkar Sharma</a></h1>
+        <p class="description">Dreamer. Tinkerer.</p>
+        <h1>The plight of shortlinks</h1>
+        <p class="date"><span>08. October 2012</span></p>
+      </div>
+    </header>
+    <div id="content">
+      <div class="content-wrap">
+        <article class="article">
+          <section class="content"><p>This morning, it turns out, t.co, twitter’s own <span class="caps">URL</span> shortner links were not working. The browser responded with ‘Lookup failed’, while wget said this:<span class="more"></span> </p>
+<pre><code class="lang-bash">Resolving t.co (t.co)... failed: nodename nor servname provided, or not known. 
+wget: unable to resolve host address `t.co<span class="string">'</span>
+</code></pre>
+<p>So I tried to look into what was going on. This potentially meant that almost all of the millions of links being shared on twitter were rendered useless. Here’s what whois&nbsp;revealed: </p>
+<pre><code class="lang-bash">Domain Name: T.CO
+Domain ID: D740225-CO
+Sponsoring Registrar: MELBOURNE IT LTD
+Sponsoring Registrar IANA ID: <span class="number">13</span>
+Registrar <span class="caps">URL</span> (registration services): www.melbourneit.com.au
+Domain Status: clientDeleteProhibited
+Domain Status: clientHold
+Domain Status: clientTransferProhibited
+Domain Status: clientUpdateProhibited
+Domain Status: serverDeleteProhibited
+Domain Status: serverTransferProhibited
+Registrant ID: TWITTERREG2012
+Registrant Name: Twitter, Inc.
+Registrant Organization: Twitter, Inc.
+Registrant Address1: <span class="number">1355</span> Market Street
+Registrant Address2: Suite <span class="number">900</span>
+Registrant City: San Francisco
+Registrant State/Province: <span class="caps">CA</span>
+Registrant Postal Code: <span class="number">94103</span>
+Registrant Country: United States
+Registrant Country Code: <span class="caps">US</span>
+Registrant Phone Number: +<span class="number">1.4152229670</span>
+Registrant Facsimile Number: +<span class="number">1.4152220922</span>
+Registrant Email: domains@twitter.com
+Administrative Contact <span class="caps">ID</span>: TWITTERADMIN2012
+Administrative Contact Name: Domain Admin
+Administrative Contact Organization: Twitter, Inc.
+Administrative Contact Address1: <span class="number">1355</span> Market Street
+Administrative Contact Address2: Suite <span class="number">900</span>
+Administrative Contact City: San Francisco
+Administrative Contact State/Province: <span class="caps">CA</span>
+Administrative Contact Postal Code: <span class="number">94103</span>
+Administrative Contact Country: United States
+Administrative Contact Country Code: <span class="caps">US</span>
+Administrative Contact Phone Number: +<span class="number">1.4152229670</span>
+Administrative Contact Facsimile Number: +<span class="number">1.4152220922</span>
+Administrative Contact Email: domains@twitter.com
+Billing Contact <span class="caps">ID</span>: MIT_BILLING
+Billing Contact Name: DBS Billing
+Billing Contact Address1: <span class="number">636</span> Ellis Street
+Billing Contact City: Mountain View
+Billing Contact State/Province: <span class="caps">CA</span>
+Billing Contact Postal Code: <span class="number">94043</span>
+Billing Contact Country: United States
+Billing Contact Country Code: <span class="caps">US</span>
+Billing Contact Phone Number: +<span class="number">1.8669073267</span>
+Billing Contact Facsimile Number: +<span class="number">1.6506182574</span>
+Billing Contact Email: billing@melbourneitdbs.com
+Technical Contact <span class="caps">ID</span>: TWITTERTECH2012
+Technical Contact Name: Tech Admin
+Technical Contact Organization: Twitter, Inc.
+Technical Contact Address1: <span class="number">1355</span> Market Street
+Technical Contact Address2: Suite <span class="number">900</span>
+Technical Contact City: San Francisco
+Technical Contact State/Province: <span class="caps">CA</span>
+Technical Contact Postal Code: <span class="number">94103</span>
+Technical Contact Country: United States
+Technical Contact Country Code: <span class="caps">US</span>
+Technical Contact Phone Number: +<span class="number">1.4152229670</span>
+Technical Contact Facsimile Number: +<span class="number">1.4152220922</span>
+Technical Contact Email: domains-tech@twitter.com
+Name Server: <span class="caps">NS1</span>.P34.DYNECT.NET
+Name Server: NS2.P34.DYNECT.NET
+Name Server: NS3.P34.DYNECT.NET
+Name Server: NS4.P34.DYNECT.NET
+Created by Registrar: INJECTCSR
+Last Updated by Registrar: MELBOURNE IT LTD
+Last Transferred Date: Mon Mar <span class="number">14</span> <span class="number">22</span>:<span class="number">21</span>:<span class="number">58</span> <span class="caps">GMT</span> <span class="number">2011</span>
+Domain Registration Date: Mon Apr <span class="number">26</span> <span class="number">07</span>:<span class="number">50</span>:<span class="number">40</span> <span class="caps">GMT</span> <span class="number">2010</span>
+Domain Expiration Date: Thu Apr <span class="number">25</span> <span class="number">23</span>:<span class="number">59</span>:<span class="number">59</span> <span class="caps">GMT</span> <span class="number">2013</span>
+Domain Last Updated Date: Mon Oct <span class="number">08</span> <span class="number">05</span>:<span class="number">13</span>:<span class="number">38</span> <span class="caps">GMT</span> <span class="number">2012</span>
+
+&gt;&gt;&gt;&gt; Whois database was last updated on: Mon Oct <span class="number">08</span> <span class="number">05</span>:<span class="number">35</span>:<span class="number">46</span> <span class="caps">GMT</span> <span class="number">2012</span> &lt;&lt;&lt;&lt;
+</code></pre>
+<p>See the last line? I’m guessing somebody messed around with <span class="caps">DNS</span> settings. Hopefully the nameservers around the world will pick it up sooner, than later. But the question is: is there a need for more ‘embedded’ URL shorteners, maybe baked into the browsers, kinda along the lines of <a href="https://login.persona.org/">Mozilla Persona</a> for&nbsp;authentication?</p>
+<p>[<strong>Update</strong>: Just noticed that <span class="caps">TNW</span> has already reported this and is <a href="http://news.ycombinator.com/item?id=4625646">trending on <span class="caps">HN</span></a>]</p>
+</section>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="content-wrap">
+        <div class="nav"><a href="/">« Back to home</a></div>
+        <section class="about"><p>I love the web and open-source; and enjoy building useful things.
+I have had the opportunity to give talks on JS-related things we built at <a href="http://mobstac.com">MobStac</a>.</p>
+<p>I love books; and sometimes try to write. I enjoy sharing my learnings on <a href="http://quora.com/Bhashkar-Sharma">Quora</a>, among other places.</p>
+<p>The excitement of learning new things is the reason I get out of bed in the morning.</p>
+
+        </section>
+        <section class="links"><a href="https://twitter.com/bhashkarsharma" class="icon fa-twitter"></a><a href="https://linkedin.com/in/bhashkarsharma" class="icon fa-linkedin"></a><a href="https://github.com/bhashkarsharma" class="icon fa-github"></a><a href="mailto:info@bhashkar.me" class="icon fa-envelope"></a></section>
+        <section class="copy">
+          <p>&copy; 2015 Bhashkar Sharma &mdash; powered by&nbsp;<a href="https://github.com/jnordberg/wintersmith">Wintersmith</a></p>
+        </section>
+      </div>
+    </footer>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-2340837-4', 'bhashkar.me');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
