@@ -1,6 +1,6 @@
 ---
 title: Hello there!
-template: page.hbs
+template: article.jade
 description: About Bhashkar Sharma
 ---
 <style>

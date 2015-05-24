@@ -19,8 +19,9 @@ block header
     p.author
       | #{ "Written by " }
       mixin author(page.metadata.author)
-  p.date
-    span= moment.utc(page.date).format('DD. MMMM YYYY')
+  if page.metadata.date
+    p.date
+      span= moment.utc(page.date).format('DD. MMMM YYYY')
 
 block content
   article.article
