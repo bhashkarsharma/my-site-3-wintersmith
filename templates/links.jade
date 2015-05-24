@@ -1,0 +1,516 @@
+extends layout
+
+block append vars
+  - bodyclass = 'article-detail'
+
+block prepend title
+  | #{ "Links - "}
+
+block header
+  style.
+    #content ul { margin: 0; }
+    #content li { list-style-type: none; text-align: center; }
+    #content li a { text-decoration: none; }
+  div.logo
+    a(href=locals.url)
+  h1.title
+    a(href=locals.url)= locals.name
+  p.description= locals.description
+
+  h1= page.title
+
+block content
+  div.linkslist
+
+  script.
+    var renderLinks = function(obj) {
+      var str = "";
+      for (key in obj) {
+        var val = obj[key];
+        console.log(key, val);
+        str += "<h3>" + key + "</h3>";
+        str += "<ul>";
+        for (item in val) {
+        console.log(item, val[item]);
+          str += "<li><a href='" + val[item].url + "'>" + val[item].title + "</a></li>";
+        }
+        str += "</ul>";
+      }
+      $('.linkslist').html(str);
+    };
+    $(document).ready(function() {
+      renderLinks(list);
+    });
+    var list = {
+      "Science/Technology" : [
+        {
+          "title" : "Folklore.org",
+          "url" : "http://www.folklore.org/"
+        },
+        {
+          "title" : "The C10K problem",
+          "url" : "http://www.kegel.com/c10k.html"
+        },
+        {
+          "title" : "The Feynman Lectures on Physics",
+          "url" : "http://www.feynmanlectures.caltech.edu/I_toc.html"
+        },
+        {
+          "title" : "Free Science Fiction Classics on the Web",
+          "url" : "http://www.openculture.com/2012/03/free_science_fiction_fantasy_dystopian_classics_on_the_web.html"
+        },
+        {
+          "title" : "The Theoretical Minimum",
+          "url" : "http://theoreticalminimum.com/"
+        }
+      ],
+      "Programming" : [
+        {
+          "title" : "Invent Your Own Computer Games with Python",
+          "url" : "http://inventwithpython.com/chapters/"
+        },
+        {
+          "title" : "Test-driven Django Tutorial",
+          "url" : "http://www.tdd-django-tutorial.com/tutorial/1/"
+        },
+        {
+          "title" : "Top 10 data mining algorithms in plain English",
+          "url" : "http://rayli.net/blog/data/top-10-data-mining-algorithms-in-plain-english/"
+        },
+        {
+          "title" : "Big-O Algorithm Complexity Cheat Sheet",
+          "url" : "http://bigocheatsheet.com/"
+        },
+        {
+          "title" : "Project Euler",
+          "url" : "https://projecteuler.net/"
+        },
+        {
+          "title" : "Front-end developer interview questions",
+          "url" : "https://github.com/h5bp/Front-end-Developer-Interview-Questions"
+        },
+        {
+          "title" : "Back-end developer interview questions",
+          "url" : "https://github.com/tvandame/back-end-developer-interview-questions"
+        },
+        {
+          "title" : "What every computer science major should know",
+          "url" : "http://matt.might.net/articles/what-cs-majors-should-know/"
+        },
+        {
+          "title" : "Geeks for Geeks",
+          "url" : "http://www.geeksforgeeks.org/"
+        },
+        {
+          "title" : "Sphere Online Judge (SPOJ)",
+          "url" : "http://www.spoj.com/"
+        },
+        {
+          "title" : "Data Structure Visualization",
+          "url" : "https://www.cs.usfca.edu/~galles/visualization/Algorithms.html"
+        },
+        {
+          "title" : "Interested in Learning Android Development? - Best Video Tutorials to Get You Started",
+          "url" : "http://www.reddit.com/r/learnprogramming/comments/22nzc1/interested_in_learning_android_development_best/"
+        },
+        {
+          "title" : "Python Tutorial: batch gradient descent algorithm",
+          "url" : "http://www.bogotobogo.com/python/python_numpy_batch_gradient_descent_algorithm.php"
+        },
+        {
+          "title" : "Visualising data structures and algorithms",
+          "url" : "http://www.comp.nus.edu.sg/~stevenha/visualization/index.html"
+        },
+        {
+          "title" : "Calculus Online Book",
+          "url" : "http://www.understandingcalculus.com/"
+        },
+        {
+          "title" : "Maze Solver II",
+          "url" : "http://bl.ocks.org/mbostock/11189414"
+        },
+        {
+          "title" : "Game Programming Patterns",
+          "url" : "http://gameprogrammingpatterns.com/"
+        },
+        {
+          "title" : "Game Mechanic Explorer",
+          "url" : "http://gamemechanicexplorer.com/"
+        },
+        {
+          "title" : "CS101 Introduction to Computing Principles",
+          "url" : "http://www.stanford.edu/class/cs101/"
+        },
+        {
+          "title" : "Computer Science from the Bottom Up",
+          "url" : "http://www.bottomupcs.com/"
+        },
+        {
+          "title" : "Build Your Own Lisp",
+          "url" : "http://www.buildyourownlisp.com/"
+        },
+        {
+          "title" : "Learn X in Y Minutes: Scenic Programming Language Tours",
+          "url" : "http://learnxinyminutes.com/"
+        },
+        {
+          "title" : "Source code beautifier / syntax highlighter",
+          "url" : "http://hilite.me/"
+        },
+        {
+          "title" : "Archive of Interesting Code",
+          "url" : "http://www.keithschwarz.com/interesting/"
+        },
+        {
+          "title" : "Python Practice Book",
+          "url" : "http://anandology.com/python-practice-book/"
+        },
+        {
+          "title" : "Hacking Secret Ciphers with Python",
+          "url" : "http://inventwithpython.com/hacking/chapters/"
+        },
+        {
+          "title" : "Ask HN: What's the best technical talk you've heard?",
+          "url" : "https://news.ycombinator.com/item?id=5511466"
+        },
+        {
+          "title" : "High Availability MySQL",
+          "url" : "http://mysqlha.blogspot.in/"
+        },
+        {
+          "title" : "Ask HN: What's your favorite bookmarked HN thread?",
+          "url" : "https://news.ycombinator.com/item?id=2158116"
+        },
+        {
+          "title" : "Django Best Practices",
+          "url" : "http://lincolnloop.com/django-best-practices/index.html"
+        },
+        {
+          "title" : "Breaking Things",
+          "url" : "http://www.breakingthin.gs/"
+        },
+        {
+          "title" : "Fabien Sanglard's website",
+          "url" : "http://fabiensanglard.net/"
+        }
+      ],
+      "Webdev" : [
+        {
+          "title" : "Google Web Fonts Typographic Project",
+          "url" : "http://femmebot.github.io/google-type/"
+        },
+        {
+          "title" : "HTML5 Boilerplate",
+          "url" : "http://html5boilerplate.com/"
+        },
+        {
+          "title" : "Eloquent JavaScript",
+          "url" : "http://eloquentjavascript.net/"
+        },
+        {
+          "title" : "CSS4 Selectors",
+          "url" : "http://css4-selectors.com/selectors/"
+        },
+        {
+          "title" : "WebGL Fundamentals",
+          "url" : "http://webglfundamentals.org/"
+        },
+        {
+          "title" : "Removing User Interface Complexity, or Why React is Awesome",
+          "url" : "http://jlongster.com/Removing-User-Interface-Complexity,-or-Why-React-is-Awesome"
+        },
+        {
+          "title" : "HTML5 UP",
+          "url" : "http://html5up.net/"
+        },
+        {
+          "title" : "WTF, HTML and CSS?",
+          "url" : "http://wtfhtmlcss.com/"
+        },
+        {
+          "title" : "JSFromHell.com",
+          "url" : "http://jsfromhell.com/"
+        },
+        {
+          "title" : "JavaScript Garden",
+          "url" : "http://bonsaiden.github.io/JavaScript-Garden/"
+        },
+        {
+          "title" : "Microjs",
+          "url" : "http://microjs.com/"
+        },
+        {
+          "title" : "Practical Typography",
+          "url" : "http://practicaltypography.com/"
+        },
+        {
+          "title" : "Programming JavaScript Applications",
+          "url" : "http://chimera.labs.oreilly.com/books/1234000000262/index.html"
+        },
+        {
+          "title" : "Learning JavaScript Design Patterns",
+          "url" : "http://addyosmani.com/resources/essentialjsdesignpatterns/book/"
+        },
+        {
+          "title" : "Screensiz.es",
+          "url" : "http://screensiz.es/"
+        },
+        {
+          "title" : "Your Web, documented",
+          "url" : "http://www.webplatform.org/"
+        },
+        {
+          "title" : "All you need to know about CSS Transitions",
+          "url" : "http://blog.alexmaccaw.com/css-transitions"
+        },
+        {
+          "title" : "HTML5 Please - Use the new and shiny responsibly",
+          "url" : "http://html5please.com/"
+        },
+        {
+          "title" : "Unheap - A tidy repository of jQuery plugins",
+          "url" : "http://www.unheap.com/"
+        },
+        {
+          "title" : "Hakim El Hattab",
+          "url" : "http://hakim.se/"
+        },
+        {
+          "title" : "High Performance Browser Networking",
+          "url" : "http://chimera.labs.oreilly.com/books/1230000000545/index.html"
+        },
+        {
+          "title" : "GDL - Make The Web Fast - YouTube",
+          "url" : "http://www.youtube.com/playlist?list=PL1B4F4863AEE2B122"
+        },
+        {
+          "title" : "Website Performance Monitoring & Website Load Testing",
+          "url" : "http://www.neustar.biz/enterprise/web-performance"
+        },
+        {
+          "title" : "Writing Fast, Memory-Efficient JavaScript",
+          "url" : "http://coding.smashingmagazine.com/2012/11/05/writing-fast-memory-efficient-javascript/"
+        },
+        {
+          "title" : "Superhero.js",
+          "url" : "http://superherojs.com/"
+        },
+        {
+          "title" : "Echo JS - JavaScript News",
+          "url" : "http://www.echojs.com/"
+        },
+        {
+          "title" : "CPU Profiling - Chrome Developer Tools",
+          "url" : "https://developers.google.com/chrome-developer-tools/docs/cpu-profiling"
+        },
+        {
+          "title" : "Octane JavaScript Benchmark",
+          "url" : "http://octane-benchmark.googlecode.com/svn/latest/index.html"
+        },
+        {
+          "title" : "Web Developer Checklist",
+          "url" : "http://webdevchecklist.com/"
+        },
+        {
+          "title" : "How To Node - NodeJS",
+          "url" : "http://howtonode.org/"
+        }
+      ],
+      "Design" : [
+        {
+          "title" : "Designing for the Web",
+          "url" : "http://designingfortheweb.co.uk/"
+        },
+        {
+          "title" : "Material Design Blog • All About Material Design",
+          "url" : "http://materialdesignblog.com/"
+        },
+        {
+          "title" : "Design + Code Freebies",
+          "url" : "http://freebie.supply/design-code"
+        },
+        {
+          "title" : "Useful resources and inspiration for creative minds",
+          "url" : "http://tympanus.net/codrops/"
+        },
+        {
+          "title" : "UI Design Database",
+          "url" : "http://ui-cloud.com/"
+        },
+        {
+          "title" : "The Usability Blog",
+          "url" : "http://usability.com/"
+        },
+        {
+          "title" : "Stock photos that don’t suck",
+          "url" : "https://medium.com/design-ux/62ae4bcbe01b"
+        },
+        {
+          "title" : "The Shape of Design - A book",
+          "url" : "http://shapeofdesignbook.com/"
+        },
+        {
+          "title" : "Graphic Exchange",
+          "url" : "http://www.mr-cup.com/blog.html"
+        },
+        {
+          "title" : "Modern contemporary design & architecture",
+          "url" : "http://mocoloco.com/"
+        },
+        {
+          "title" : "Dezeen - architecture and design magazine",
+          "url" : "http://www.dezeen.com/"
+        },
+        {
+          "title" : "Designing for the Web",
+          "url" : "http://designingfortheweb.co.uk/"
+        },
+        {
+          "title" : "find your colour scheme",
+          "url" : "http://colourco.de/"
+        },
+        {
+          "title" : "Icon Archive",
+          "url" : "http://www.iconarchive.com/"
+        },
+        {
+          "title" : "Color Scheme Designer",
+          "url" : "http://colorschemedesigner.com/"
+        }
+      ],
+      "Life" : [
+        {
+          "title" : "The Complete Guide to Not Giving a Fuck",
+          "url" : "http://inoveryourhead.net/the-complete-guide-to-not-giving-a-fuck/"
+        },
+        {
+          "title" : "ZEN PENCILS » 172. ISAAC ASIMOV: A lifetime of learning",
+          "url" : "http://zenpencils.com/comic/asimov/"
+        },
+        {
+          "title" : "The days are long but the decades are short",
+          "url" : "http://blog.samaltman.com/the-days-are-long-but-the-decades-are-short"
+        },
+        {
+          "title" : "Love is Biased, Not Blind",
+          "url" : "http://markmanson.net/love-is-biased"
+        },
+        {
+          "title" : "The Subtle Art of Not Giving a Fuck",
+          "url" : "http://markmanson.net/not-giving-a-fuck"
+        },
+        {
+          "title" : "The Smart Way to Stick to Habits",
+          "url" : "http://zenhabits.net/stick/"
+        },
+        {
+          "title" : "100: Practice something for 100 days",
+          "url" : "https://giveit100.com/"
+        },
+        {
+          "title" : "The Scientific 7-Minute Workout",
+          "url" : "http://well.blogs.nytimes.com/2013/05/09/the-scientific-7-minute-workout/"
+        },
+        {
+          "title" : "7Min :: A Seven Minute Workout Timer",
+          "url" : "http://7-min.com/"
+        },
+        {
+          "title" : "The Egg",
+          "url" : "http://www.galactanet.com/oneoff/theegg_mod.html"
+        }
+      ],
+      "Meditation" : [
+        {
+          "title" : "the quiet place",
+          "url" : "http://thequietplaceproject.com/thequietplace"
+        },
+        {
+          "title" : "Calm",
+          "url" : "calm.com"
+        }
+      ],
+      "Misc" : [
+        {
+          "title" : "Free online radio",
+          "url" : "http://www.onlineradiostations.com/radio-stations/"
+        },
+        {
+          "title" : "Notepad in browser",
+          "url" : "data:text/html, <body contenteditable style=\"font-size:2rem;line-height:1.4;max-width:60rem;margin:0 auto;padding:4rem;\">"
+        },
+        {
+          "title" : "Psychological Pricing: 29 Strategies and Tactics",
+          "url" : "http://www.nickkolenda.com/psychological-pricing-strategies/"
+        },
+        {
+          "title" : "One Man's Search For Love",
+          "url" : "http://www.bennadel.com/resources/presentations/lightningtalklove/video/"
+        },
+        {
+          "title" : "Touch Pianist - Tap in Rhythm and Perform Your Favourite Music",
+          "url" : "http://touchpianist.com/"
+        },
+        {
+          "title" : "25 Life-Changing Style Charts Every Guy Needs Right Now",
+          "url" : "http://www.buzzfeed.com/juliegerstein/clothes-make-the-man"
+        },
+        {
+          "title" : "Privacy Image Editor",
+          "url" : "http://facepixelizer.rubberducklabs.com/"
+        },
+        {
+          "title" : "Top 31 Amazing DIY Paintings For Your Blank Walls",
+          "url" : "http://homesthetics.net/top-31-amazing-diy-paintings-for-your-blank-walls/"
+        },
+        {
+          "title" : "A Soft Murmur - Noise Generator",
+          "url" : "http://asoftmurmur.com/"
+        },
+        {
+          "title" : "Visually stunning math concepts which are easy to explain",
+          "url" : "https://math.stackexchange.com/questions/733754/visually-stunning-math-concepts-which-are-easy-to-explain"
+        },
+        {
+          "title" : "Free Image Sources For Your Blog and Social Media Posts",
+          "url" : "http://blog.bufferapp.com/free-image-sources-list"
+        },
+        {
+          "title" : "The Ultimate Headphones Test",
+          "url" : "http://www.audiocheck.net/soundtests_headphones.php"
+        },
+        {
+          "title" : "12 Rules for Learning Foreign Languages in Record Time — The Only Post You’ll Ever Need",
+          "url" : "http://www.fourhourworkweek.com/blog/2014/03/12/how-to-learn-a-foreign-language/"
+        },
+        {
+          "title" : "100 Websites You Should Know and Use",
+          "url" : "http://blog.ted.com/2007/08/03/100_websites_yo/"
+        },
+        {
+          "title" : "Gain Weight as a Vegan",
+          "url" : "http://www.nomeatathlete.com/gain-weight-vegan/"
+        },
+        {
+          "title" : "The 10 Hardest Logic Puzzles Ever Created",
+          "url" : "http://www.conceptispuzzles.com/index.aspx?uri=info%2Farticle%2F424"
+        },
+        {
+          "title" : "Personality Test Site",
+          "url" : "http://similarminds.com/"
+        },
+        {
+          "title" : "My Fridge Food - recipes you already have in your fridge",
+          "url" : "http://www.myfridgefood.com/"
+        },
+        {
+          "title" : "Entrepreneurship Corner",
+          "url" : "http://ecorner.stanford.edu/index.html"
+        }
+      ]
+    };
+
+
+block prepend footer
+  div.nav
+    a(href=contents.index.url) « Back to home
