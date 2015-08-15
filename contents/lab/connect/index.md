@@ -11,7 +11,7 @@ script: true
 A simple peer-to-peer chat application that allows people to watch YouTube videos in sync.
 
 <link rel="stylesheet" href="/css/mediaelementplayer.min.css"/>
-<script src="http://cdn.peerjs.com/0.3/peer.js"></script>
+<script src="peer.min.js"></script>
 <script src="/js/mediaelement-and-player.min.js"></script>
 <div class="login">
     <form>
