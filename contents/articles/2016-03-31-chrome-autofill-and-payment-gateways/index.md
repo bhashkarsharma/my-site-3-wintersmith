@@ -14,7 +14,7 @@ When you add a card for the first time, a reversible temporary transaction is ge
 
 ![](/media/posts/card-wallet.jpg)
 
-I've been using this feature for a while and it is pretty useful. All you need to do is enter your CCV/CVV number when prompted by the browser.
+I've been using this feature for a while and it is pretty useful. All you need to do is enter your CVV number when prompted by the browser.
 
 I became so used to autofilling this information that I never looked at the value in the fields, trusting that Chrome would do the right thing, and expecting that the sites would too. Turns out I was wrong.
 
