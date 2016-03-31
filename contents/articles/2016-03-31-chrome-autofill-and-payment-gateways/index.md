@@ -20,6 +20,8 @@ I became so used to autofilling this information that I never looked at the valu
 
 In India, you also need to enter a One-Time Password (OTP), that is usually sent via an SMS, to authorize the payment after entering your card details. When I faced failed payment twice, I thought I had typed in the OTP wrong.
 
+Turns out the problem was that the month field being autofilled was off by one.
+
 ##Javascript
 
 In Javascript, month is zero-indexed, which means January would be 0 and December would be 11. I didn't bother looking into the source code of the websites, but I'm assuming the sites getting this wrong have to do with zero-indexing. On observation, I found that for a Card with expiry month April (4th month; index 3 for JS), the form autofilled the (displayed) month to 05 (May). I am assuming that the `value` in the month `<select>` field was 4 - the index for May.
